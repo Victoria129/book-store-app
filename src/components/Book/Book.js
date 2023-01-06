@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../../redux/books/books';
+import BookForm from '../BookForm/BookForm';
 
 const Book = ({ id, title, author }) => {
   const dispatch = useDispatch();
@@ -26,6 +27,8 @@ const Book = ({ id, title, author }) => {
 
         <button type="button">Update progress</button>
       </li>
+      <br />
+      <BookForm />
     </div>
   );
 };
@@ -35,4 +38,5 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
+
 export default Book;

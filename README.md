@@ -122,9 +122,8 @@ To run the project, execute the following command:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[a-home-page]**
-- [ ] **[a-calculator-page]**
-- [ ] **[a-quote-page]**
+- [ ] **[addBook]**
+- [ ] **[removeBook]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
