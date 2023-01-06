@@ -2,10 +2,10 @@ import React from 'react';
 import {
   BrowserRouter, Route, Routes, Navigate,
 } from 'react-router-dom';
-import Nav from './Nav';
-import Books from './Books';
-import Categories from './Categories';
-import Error from './Error';
+import Nav from './components/Nav';
+import Books from './Pages/Books/Books';
+import Categories from './Pages/Categories/Categories';
+import Error from './components/Error';
 
 const App = () => (
   <BrowserRouter>

@@ -1,0 +1,42 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../redux/books/books';
+import BookForm from '../BookForm/BookForm';
+
+const Book = ({ id, title, author }) => {
+  const dispatch = useDispatch();
+
+  const handleRemoveClick = () => {
+    dispatch(removeBook({ id }));
+  };
+
+  return (
+    <div>
+      <li key={id}>
+        <h2>{title}</h2>
+        <p>{author}</p>
+        <button type="button">Comments</button>
+        <button type="button" onClick={handleRemoveClick}>Remove</button>
+        <button type="button">Edit</button>
+        <p>
+
+          % Completed
+        </p>
+        <p>Current Chapter</p>
+
+        <button type="button">Update progress</button>
+      </li>
+      <br />
+      <BookForm />
+    </div>
+  );
+};
+
+Book.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};
+
+export default Book;
