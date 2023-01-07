@@ -3,7 +3,7 @@ import BookForm from '../../components/BookForm/BookForm';
 import Books from '../Books/Books';
 
 const Home = () => (
-  <div className="add-book-container">
+  <div className="addbook-container">
     <Books />
     <BookForm />
   </div>
