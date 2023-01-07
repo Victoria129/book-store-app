@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaRegUser } from 'react-icons/fa';
+import navCss from './Navbar.module.css';
 
 const Navbar = () => (
-  <nav className="nav">
+  <nav className={navCss.nav}>
     <header>
-      <h1>BookStore</h1>
+      <h1>Bookstore CMS</h1>
     </header>
 
     <NavLink to="/">
@@ -13,6 +15,9 @@ const Navbar = () => (
     <NavLink to="/categories">
       Categories
     </NavLink>
+    <div className={navCss.userIcon}>
+      <FaRegUser />
+    </div>
   </nav>
 );
 

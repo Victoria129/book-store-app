@@ -41,7 +41,7 @@ const Book = () => {
             </div>
           </div>
           <section className="progress-container">
-            <div className="progress-loader">
+            <div className="progress-bar">
               <CircularProgressbar value={value} />
             </div>
             <div className="test">

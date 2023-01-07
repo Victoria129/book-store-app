@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import uuid from 'react-uuid';
 import { postBook } from '../../redux/books/books';
 
@@ -27,7 +26,7 @@ const BookForm = () => {
   };
   return (
     <section className="Form">
-      <span className="form-title">ADD A NEW BOOK</span>
+      <span className="form-title">ADD NEW BOOK</span>
       <form>
         <input
           type="text"
