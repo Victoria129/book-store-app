@@ -6,20 +6,18 @@
 }
 
 body {
-  margin: 0;
+  display: flex;
+  align-items: center;
+  margin: 200px 200px;
   background-color: #fafafa;
-  padding: 0 100px;
+  padding: 20px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 header {
   display: flex;
   flex-direction: row;
-  border-bottom: solid 1px #e8e8e8;
-  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
-}
-
-.nav-items {
-  margin: 29px 30px;
 }
 
 .nav-item {
@@ -80,7 +78,7 @@ header {
   flex-direction: row;
   margin-bottom: 13px;
   margin-top: 50px;
-  width: 80%;
+  width: 83%;
   border: solid 1px #e8e8e8;
   background-color: white;
   padding: 10px 0 50px 0;
@@ -126,8 +124,9 @@ header {
 }
 
 hr {
+  display: flex;
   width: 60%;
-  align-items: center;
+  text-align: start;
   border: solid 1px #e8e8e8;
 }
 
@@ -349,12 +348,8 @@ input {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 50px;
-  margin-top: 60px;
-  background-color: #fff;
-  padding: 5px 0 0 20px;
-  position: relative;
+  gap: 60px;
+  border-bottom: rgb(240, 240, 240);
 }
 
 .nav a {
@@ -368,10 +363,3 @@ header h1 {
   color: #0088f0;
   font-size: 36px;
 }
-
-/* .userIcon {
-  font-size: 25px;
-  color: #0088f0;
-  position: absolute;
-  right: 50px;
-} */
