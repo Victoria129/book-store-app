@@ -27,20 +27,20 @@ const BookReducer = (state = books, action) => {
 
 export const addBook = (book) => ({ type: ADD_BOOK, payload: book });
 
-export const getBooks = () => async(dispatch) => {
+export const getBooks = () => async (dispatch) => {
   await axios.get(`${url}/${identifier}/books`).then(
     (response) => dispatch(addBook(response.data)),
     (err) => dispatch({ type: BOOK_FAILURE, err }),
   );
 };
 
-export const deleteBook = (id) => async(dispatch) => {
+export const deleteBook = (id) => async (dispatch) => {
   await axios
     .delete(`${url}/${identifier}/books/${id}`)
     .then(() => dispatch(getBooks())); return { type: DELETE_BOOK, payload: id };
 };
 
-export const postBook = (book) => async(dispatch) => {
+export const postBook = (book) => async (dispatch) => {
   await axios
     .post(`${url}/${identifier}/books`, book)
     .then(() => dispatch(getBooks()));
