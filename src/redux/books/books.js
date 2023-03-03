@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const ADD_BOOK = 'react-bookstore/books/ADD_BOOK';
 const DELETE_BOOK = 'react-bookstore/books/DELETE_BOOK';
-const BOOK_FAILURE = 'react-bookstore/books/BOOK_FAILURE';
+const BOOK_FAIL = 'react-bookstore/books/BOOK_FAIL';
 
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps';
 const identifier = 'pSmXMG8pCv1BQZweEpXG';
@@ -30,7 +30,7 @@ export const addBook = (book) => ({ type: ADD_BOOK, payload: book });
 export const getBooks = () => async (dispatch) => {
   await axios.get(`${url}/${identifier}/books`).then(
     (response) => dispatch(addBook(response.data)),
-    (err) => dispatch({ type: BOOK_FAILURE, err }),
+    (err) => dispatch({ type: BOOK_FAIL, err }),
   );
 };
 
