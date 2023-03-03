@@ -16,13 +16,13 @@ const bookSlice = createSlice({
       category: 'Fiction',
     },
     {
-      item_id: 'item2',
+      id: 'item2',
       title: 'Anna Karenina',
       author: 'Leo Tolstoy',
       category: 'Fiction',
     },
     {
-      item_id: 'item3',
+      id: 'item3',
       title: 'The Selfish Gene',
       author: 'Richard Dawkins',
       category: 'Nonfiction',
