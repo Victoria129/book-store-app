@@ -1,46 +1,45 @@
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-
-import Home from './Pages/Home/Home';
-import Categories from './Pages/Categories/Categories';
+import React from 'react';
+import {
+  BrowserRouter, Route, Routes, Navigate,
+} from 'react-router-dom';
+import Nav from './components/Nav';
 import Books from './Pages/Books/Books';
+import Categories from './Pages/Categories/Categories';
+import Error from './components/Error';
 
-const Layout = () => (
-  <div className="app">
-    <Navbar />
-    <Outlet />
-  </div>
-);
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/categories',
-        element: <Categories />,
-      },
-      {
-        path: '/books',
-        element: <Books />,
-      },
-
-    ],
-
-  },
-]);
-
-function App() {
-  return (
-    <div className="App">
-      <RouterProvider router={router} />
+const App = () => (
+  <BrowserRouter>
+    <div className="header">
+      <div className="container">
+        <Nav />
+      </div>
     </div>
-  );
-}
+    <div className="body">
+      <div className="container">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<Navigate to="/books" replace />}
+          />
+          <Route
+            path="/books"
+            element={<Books />}
+            exact
+          />
+          <Route
+            path="/categories"
+            element={<Categories />}
+            exact
+          />
+          <Route
+            path="*"
+            element={<Error />}
+          />
+        </Routes>
+      </div>
+    </div>
+  </BrowserRouter>
+);
 
 export default App;
