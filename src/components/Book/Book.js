@@ -1,73 +1,42 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import { getBooks, deleteBook } from '../../redux/books/books';
-import 'react-circular-progressbar/dist/styles.css';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../redux/books/books';
+import BookForm from '../BookForm/BookForm';
 
-const Book = () => {
-  const books = useSelector((state) => state.books);
+const Book = ({ id, title, author }) => {
   const dispatch = useDispatch();
-  const deleteBookEvent = (id) => {
-    dispatch(deleteBook(id));
+
+  const handleRemoveClick = () => {
+    dispatch(removeBook({ id }));
   };
 
-  useEffect(() => {
-    dispatch(getBooks());
-  }, [dispatch]);
-
-  if (!books) return <p>No books available</p>;
-  const value = 50;
-  const chapter = 20;
   return (
     <div>
-      {books.map((book) => (
-        <section className="book" key={book.id}>
-          <div className="book-info">
-            <p className="book-category">
-              {book.category}
-            </p>
+      <li key={id}>
+        <h2>{title}</h2>
+        <p>{author}</p>
+        <button type="button">Comments</button>
+        <button type="button" onClick={handleRemoveClick}>Remove</button>
+        <button type="button">Edit</button>
+        <p>
 
-            <p className="book-title">
-              {book.title}
-            </p>
-            {' '}
-            <p className="author">
-              {book.author}
-            </p>
-            <div className="buttons-container">
-              <button className="buttons" type="submit">Comments</button>
-              <button className="buttons" type="submit" onClick={() => deleteBookEvent(book.id)}>Remove</button>
-              <button className="buttons" type="submit">Edit</button>
-            </div>
-          </div>
-          <section className="progress-container">
-            <div className="progress-bar">
-              <CircularProgressbar value={value} />
-            </div>
-            <div className="test">
-              <div className="progress-info">
-                <p className="progress-number">
-                  {value}
-                  %
-                </p>
-                <p className="progress-status">Completed</p>
-              </div>
-            </div>
-          </section>
-          <div className="chapter-info">
-            <p className="current-chapter">CURRENT CHAPTER</p>
-            <p className="chapter-number">
-              CHAPTER :
-              {' '}
-              {chapter}
-            </p>
-            <button className="progress-button" type="submit">UPDATE PROGRESS</button>
-          </div>
+          % Completed
+        </p>
+        <p>Current Chapter</p>
 
-        </section>
-      ))}
+        <button type="button">Update progress</button>
+      </li>
+      <br />
+      <BookForm />
     </div>
   );
+};
+
+Book.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
 };
 
 export default Book;
