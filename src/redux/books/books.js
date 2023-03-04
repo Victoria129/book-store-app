@@ -8,7 +8,6 @@ const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 const identifier = 'pSmXMG8pCv1BQZweEpXG';
 
 const books = [];
-
 const BookReducer = (state = books, action) => {
   switch (action.type) {
     case ADD_BOOK: {
