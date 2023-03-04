@@ -27,7 +27,7 @@ body {
   margin-top: 50px;
   width: 90%;
   border: solid 1px #e8e8e8;
-  background-color: white;
+  background-color: #fff;
   padding: 10px 0 50px 0;
 }
 
@@ -95,7 +95,7 @@ hr {
 }
 
 .buttons {
-  background-color: white;
+  background-color: #fff;
   border: none;
   color: var(--secondcolor);
   border-right: solid 1px #e8e8e8;
@@ -129,7 +129,7 @@ hr {
 }
 
 .progress-button {
-  color: white;
+  color: #fff;
   background-color: var(--logocolor);
   border: none;
   width: 10rem;
@@ -138,7 +138,7 @@ hr {
 }
 
 .add-button {
-  color: white;
+  color: #fff;
   background-color: var(--logocolor);
   border: none;
   width: 50%;
@@ -222,7 +222,7 @@ input {
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.18px;
-  color: grey;
+  color: #808080;
 }
 
 .status-container {
@@ -240,11 +240,11 @@ input {
   font-size: 1rem;
   font-weight: bold;
   font-stretch: normal;
-  color: grey;
+  color: #808080;
 }
 
 .status-button {
-  color: white;
+  color: #fff;
   background-color: var(--logocolor);
   border: none;
   width: 20%;
