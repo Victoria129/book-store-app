@@ -33,13 +33,13 @@ export const getBooks = () => async (dispatch) => {
   );
 };
 
-export const deleteBook = (id) => async (dispatch) => {
+export const deleteBook = (id) => async(dispatch) => {
   await axios
     .delete(`${url}/${identifier}/books/${id}`)
     .then(() => dispatch(getBooks())); return { type: DELETE_BOOK, payload: id };
 };
 
-export const postBook = (book) => async (dispatch) => {
+export const postBook = (book) => async(dispatch) => {
   await axios
     .post(`${url}/${identifier}/books`, book)
     .then(() => dispatch(getBooks()));
